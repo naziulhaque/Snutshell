@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: snutshell
-Version: 1.2
+Version: 1.2.2
 Summary: create xlsx and dat file from python list, tuple, dictionary, numpy array
 Home-page: UNKNOWN
 Author: arn
@@ -8,6 +8,7 @@ Author-email: naziul.arnab@gmail.com
 License: MIT
 Description: A library for storing numeric data in dat and xlsx format
         
+        see the documentation at https://github.com/naziulhaque/Snutshell/blob/master/README.md
         
         change log
         ===========

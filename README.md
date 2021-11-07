@@ -25,8 +25,8 @@ All the functionalities are explained using simple examples:
     dict = {'title1' : list1, 'title2': list2} 
     create_xlsx('filename.xlsx', dict)
 
-    #instead of supplying a dictionary, we can also provide two lists: one containing the #keys, 
-    #and the other containing the values. The following line is equivalent to the previous #line.
+    #instead of supplying a dictionary, we can also provide two lists: one containing the keys, 
+    #and the other containing the values. The following line is equivalent to the previous line.
     create_xlsx('filename.xlsx', ['title1', 'title2'], [list1, list2])
 
 ![image2](https://github.com/naziulhaque/Snutshell/blob/master/docs/s2.PNG)
