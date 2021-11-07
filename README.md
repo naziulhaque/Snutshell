@@ -21,7 +21,7 @@ All the functionalities are explained using simple examples:
     from snutshell import create_xlsx
     import numpy as np
     list1 = [['a', 'b', 'c'], ['apple', 'banana', 'cat']]
-    list2 = np.array([[5,6], [7,8]]) 
+    list2 = np.array([[5, 6], [7, 8]]) 
     dict = {'title1' : list1, 'title2': list2} 
     create_xlsx('filename.xlsx', dict)
 
@@ -33,8 +33,20 @@ All the functionalities are explained using simple examples:
 
 
     # you can also save some weird data 
-    dict = {'habijabi': 'alum-halum khalum', 'time':300, 'a weird dictionary': {1:[1,2,3],2:3,3:5,4:7}, 42:[['aanjk', 'ajvnk', 'gnkja'],[1,2,3]]}   
+    dict = {'habijabi': 'alum-halum khalum', 'time': 300, 'a weird dictionary': {1 : [1,2,3], 2 : 3, 3 : 5, 4 : 7}, 42 : [['aanjk', 'ajvnk', 'gnkja'],[1, 2, 3]]}   
     create_xlsx('filename.xlsx', dict)    # observe the way a dictionary input is saved
    
 ![image3](https://github.com/naziulhaque/Snutshell/blob/master/docs/s3.PNG)
 
+    # you can save the file in DAT format also. DAT file saves the data as python dictionary. For this you have to use a keyword argument which is illustrated using the previous example:
+
+    dict = {'habijabi': 'alum-halum khalum', 'time':300, 'a weird dictionary': {1:[1,2,3],2:3,3:5,4:7}, 42:[['aanjk', 'ajvnk', 'gnkja'],[1,2,3]]}   
+    create_xlsx('filename.xlsx', dict, dat = True)
+
+
+**load** function
+
+    # this function loads a DAT file (which was created from a python dictionary in the first place) as python dictionary.
+
+    from snutshell import load
+    dict = load('filename.dat')

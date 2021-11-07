@@ -3,6 +3,11 @@ import xlsxwriter
 import numpy as np
 import os
 
+def load(filename):
+    loaded_dict = pickle.load(open(filename, 'rb'))
+    return dict
+
+
 def np_2darray_converter(matrix):
 
     if(type(matrix) == type({})):             # making dictionary suitable for excel
@@ -27,8 +32,14 @@ def create_dat(filename, keys, data = None):
             data_dict[key] = data[i]
         pickle.dump(data_dict, open(filename, 'wb'))
 
+        
 
-def create_xlsx(filename, keys, data = None):
+
+def create_xlsx(filename, keys, data = None, dat = False):
+    if(dat == True):
+        fname, fext = os.path.splitext(filename)
+        create_dat(fname + '.dat', keys, data)
+
     workbook = xlsxwriter.Workbook(filename)
     worksheet = workbook.add_worksheet()
     title_format = workbook.add_format({ 'font_size':16, 'font_color':'#02172C',
@@ -69,70 +80,6 @@ def create_xlsx(filename, keys, data = None):
 
     workbook.close()
 
-class Simsum:
-    '''the summary class summarizes simulation results (input variables, parameters, useful results)
-    '''
-
-    def __init__(self, s = None):
-        if(s == None):
-            self.description = "Description was not provided"
-        else:
-            self.description = s
-        self.data = {}
-    def add(self, keys, values = None):
-        if (values == None):    # dictionary input
-            try:
-                for i in keys.keys():
-                    if(str(i)[0] == '_' and str(i)[1] == '_'):
-                        pass
-                    else:
-                        self.data[i] = keys[i]
-            except:
-                print('A dictionary with "string / numeric" keys is expected as 2nd positional argument')
-
-        else:
-            try:
-                for i, key in enumerate(keys):
-                    self.data[key] = values[i]
-            except:
-                print('A list is expected as 2nd and 3rd positional argument')
-
-
-
-    def save(self, filename, xlsx = False):
-        final_dict = {'description' : self.description}
-        final_dict.update(self.data)
-        pickle.dump(final_dict, open(filename, 'wb'))
-
-        if(xlsx == True):
-            fname, fext = os.path.splitext(filename)
-            create_xlsx(fname + '.xlsx', final_dict)
-
-
-    @classmethod
-    def load(cls, filename, dict = False):
-        loaded_dict = pickle.load(open(filename, 'rb'))
-        if (dict == False):
-            new_obj = Simsum(loaded_dict['description'])
-            data_dict = {}
-            for key in loaded_dict.keys():
-                if(key != 'description'):
-                    data_dict[key] = loaded_dict[key]
-            new_obj.add(data_dict)
-            return new_obj
-        else:
-            return loaded_dict
-
-    def print_description(self):
-        print(self.description)
-    def print_keys(self):
-        print('All Keys: ', list(self.data.keys()) + ['description'])
     
-    def get_keys(self):
-        return list(self.data.keys())
 
-    def get_data(self, key = None):
-        if(key == None):
-            return self.data
-        else:
-            return self.data[key]
+
