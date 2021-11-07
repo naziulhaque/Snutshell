@@ -6,19 +6,20 @@ All the functionalities are explained using simple examples:
 **create_xlsx** function
 .. code-block:: python
         
-   from snutshell import create_xlsx
-   list1 = [2, 3, 5, 7, 11]
-   list2 = [1, 3, 5, 7, 9, 11, 13, 15]
-   # we want to save the two lists into a xlsx file
-   # For this, we have to create a dictionary 
-   dict = {'primes' : list1, 'odds': list2}  # dictionary keys will be used as data title
-   create_xlsx('filename.xlsx', dict)
+..from snutshell import create_xlsx
+..list1 = [2, 3, 5, 7, 11]
+..list2 = [1, 3, 5, 7, 9, 11, 13, 15]
+..# we want to save the two lists into a xlsx file
+..# For this, we have to create a dictionary 
+..dict = {'primes' : list1, 'odds': list2}  # dictionary keys will be used as data title
+..create_xlsx('filename.xlsx', dict)
 .. image:: https://github.com/naziulhaque/Snutshell/blob/master/docs/s1.PNG
 
+
 .. code-block:: python
-   # you can also save 2d numpy arrays or nested list     
-   from snutshell import create_xlsx
-   import numpy as np
+..# you can also save 2d numpy arrays or nested list     
+..from snutshell import create_xlsx
+..import numpy as np
    list1 = [['a', 'b', 'c'], ['apple', 'banana', 'cat']]
    list2 = np.array([[5,6], [7,8]]) 
    dict = {'title1' : list1, 'title2': list2} 
@@ -37,6 +38,3 @@ All the functionalities are explained using simple examples:
 .. image:: https://github.com/naziulhaque/Snutshell/blob/master/docs/s3.PNG
 
 
-See the full documentation at: https://xlsxwriter.readthedocs.io
-
-Release notes: https://xlsxwriter.readthedocs.io/changes.html
