@@ -5,7 +5,7 @@ import os
 
 def load(filename):
     loaded_dict = pickle.load(open(filename, 'rb'))
-    return dict
+    return loaded_dict
 
 
 def np_2darray_converter(matrix):

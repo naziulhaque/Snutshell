@@ -10,7 +10,7 @@ classifiers = [
 
 setup(
   name='snutshell',
-  version='1.2.2',
+  version='1.3',
   description='create xlsx and dat file from python list, tuple, dictionary, numpy array',
   long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
   url='',
