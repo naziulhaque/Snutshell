@@ -13,7 +13,7 @@ All the functionalities are explained using simple examples:
    # For this, we have to create a dictionary 
    dict = {'primes' : list1, 'odds': list2}  # dictionary keys will be used as data title
    create_xlsx('filename.xlsx', dict)
-.. image:: 
+.. image:: https://github.com/naziulhaque/Snutshell/blob/master/docs/s1.PNG
 
 .. code-block:: python
    # you can also save 2d numpy arrays or nested list     
@@ -28,13 +28,13 @@ All the functionalities are explained using simple examples:
    and the other containing the values. The following line is equivalent to the previous line.
    create_xlsx('filename.xlsx', ['title1', 'title2'], [list1, list2])
 
-.. image:: 
+.. image:: https://github.com/naziulhaque/Snutshell/blob/master/docs/s2.PNG
 
 .. code-block:: python
    # you can also save some weird data 
    dict = {'habijabi': 'alum-halum khalum', 'time':300, 'a weird dictionary': {1:[1,2,3],2:3,3:5,4:7}, 42:[['aanjk', 'ajvnk', 'gnkja'],[1,2,3]]}   
    create_xlsx('filename.xlsx', dict)    # observe the way a dictionary input is saved
-.. image:: 
+.. image:: https://github.com/naziulhaque/Snutshell/blob/master/docs/s3.PNG
 
 
 See the full documentation at: https://xlsxwriter.readthedocs.io
