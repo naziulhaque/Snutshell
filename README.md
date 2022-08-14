@@ -1,7 +1,7 @@
 # Snutshell
 
 
-**Snutshell** is a Python library for storing numeric data in dat and xlsx format
+**Snutshell** is a Python library for converting numeric data to xlsx file
 
 All the functionalities are explained using simple examples.
 ### 1. *create_xlsx* function
